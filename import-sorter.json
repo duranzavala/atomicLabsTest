@@ -1,0 +1,11 @@
+{
+    "autoFormat": "onSave",
+    "maxLineLength": 100,
+    "tabSize": 4,
+    "quoteMark": "single",
+    "formatExports": true,
+    "wrappingStyle": {
+        "maxBindingNamesPerLine": 2,
+        "maxExportNamesPerLine": 1
+    }
+}
