@@ -15,6 +15,8 @@ enum Strings {
     placeHolderLastName = 'Apellidos',
     placeHolderPhoneNumber = 'Número de Celular',
     send = 'Enviar',
+    signUpSuccessPhraseOne = 'En breve recibirás un correo de\nconfirmación por parte del equipo de\nAtomicLabs.',
+    signUpSuccessPhraseTwo = 'Recuerda revisar tu bandeja de SPAM\n!Esperamos verte pronto!',
     signUpTitle = 'Queremos saber que eres tú, por favor ingresa los siguientes datos:',
     wantToBePart = '!Quiero ser parte!',
     wantToKnowMore = 'Quiero saber más',

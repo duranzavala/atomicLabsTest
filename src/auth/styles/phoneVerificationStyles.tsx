@@ -19,7 +19,7 @@ export default StyleSheet.create({
     },
     logo: {
         height: wp('15%'),
-        marginTop: hp('1%'),
+        marginTop: hp('2%'),
         width: wp('100%'),
     },
     mainContainer: {

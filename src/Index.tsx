@@ -6,12 +6,13 @@ import LoadingComponent from '@Loading/screens/loadingComponent';
 import SignUpComponent from '@Auth/screens/signUpComponent';
 import HomeComponent from '@Home/screens/homeComponent';
 import PhoneVerificationComponent from '@Auth/screens/phoneVerificationComponent';
+import SignUpSuccessComponent from '@Auth/screens/signUpSuccessComponent';
 
 const App: React.FC = () => {
     return (
         <Provider store={store}>
             <SafeAreaView style={Styles.safeAreaViewContainer}>
-                <PhoneVerificationComponent />
+                <SignUpSuccessComponent />
             </SafeAreaView>
             <LoadingComponent />
         </Provider>

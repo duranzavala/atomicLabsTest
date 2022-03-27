@@ -7,15 +7,11 @@ export default StyleSheet.create({
         flex: 1,
         width: wp('100%'),
     },
-    button: {
-        alignSelf: 'center',
-        marginTop: hp('5%'),
-    },
-    input: {
-        marginTop: '5%',
-    },
-    keyboardContainer: {
-        flex: 1,
+    bodyMessage: {
+        marginTop: hp('3.5%'),
+        color: Colors.White,
+        fontSize: wp('4.5%'),
+        textAlign: 'left',
     },
     logo: {
         height: wp('15%'),
@@ -25,7 +21,7 @@ export default StyleSheet.create({
     mainContainer: {
         paddingHorizontal: wp('2%'),
     },
-    spaceManEating: {
+    spaceManComputer: {
         height: hp('50%'),
         marginBottom: hp('1%'),
         marginTop: hp('1%'),
@@ -33,8 +29,19 @@ export default StyleSheet.create({
     },
     title: {
         color: Colors.White,
-        fontSize: wp('4%'),
+        fontSize: wp('8%'),
         marginTop: hp('5%'),
-        textAlign: 'left',
+        textAlign: 'center',
+        fontWeight: 'bold',
     },
-})
+    titleBold: {
+        color: Colors.PrimaryColor,
+        fontSize: wp('8%'),
+        marginTop: hp('5%'),
+        textAlign: 'center',
+        fontWeight: 'bold',
+    },
+    titleContainer: {
+        paddingHorizontal: wp('10%'),
+    },
+});

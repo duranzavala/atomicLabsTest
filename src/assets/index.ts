@@ -17,6 +17,7 @@ const stepTwoBorder = require('@Assets/images/Group4020.png');
 const stepTwoBold = require('@Assets/images/Group4023.png');
 const stepCompleted = require('@Assets/images/Group4016.png');
 const spaceManMoon = require('@Assets/images/Group4034.png');
+const spaceManComputer = require('@Assets/images/Group4039.png');
 const atomicLogo: string = 'https://static.wixstatic.com/media/8143b9_987ce3ac07ac4f53aa64484350b47866~mv2.png/v1/fill/w_280,h_140,al_c,lg_1,enc_auto/20190404_atomiclabs_mx_blango.png';
 
 const Images = {
@@ -31,6 +32,7 @@ const Images = {
     linkedIn,
     secondTeamMember,
     spaceMan,
+    spaceManComputer,
     spaceManEating,
     spaceManMoon,
     stepCompleted,
