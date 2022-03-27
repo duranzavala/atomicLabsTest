@@ -24,6 +24,7 @@
       "@Interfaces/*": ["interfaces/*"],
       "@Store/*": ["store/*"],
       "@Loading/*": ["loading/*"],
+      "@Network/*": ["network/*"],
     },
   },
   "exclude": [

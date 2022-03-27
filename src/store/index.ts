@@ -3,6 +3,8 @@ import { createEpicMiddleware } from "redux-observable";
 
 import { rootEpic, rootReducer } from "@Store/modules/root";
 import { EpicDependencies } from '@Interfaces/index';
+import NetworkAxiosService from '@Network/services/networkService';
+import AuthenticateServiceImpl from '@Network/services/authServiceImpl';
 
 declare global {
   interface Window {
@@ -10,8 +12,11 @@ declare global {
   }
 }
 
+const networkAxiosService: NetworkAxiosService = NetworkAxiosService.getInstance();
+const authenticateServiceImpl = new AuthenticateServiceImpl(networkAxiosService);
+
 const dependencies: EpicDependencies = {
-  networkService: '',
+  authenticateService: authenticateServiceImpl,
 };
 
 const epicMiddleware = createEpicMiddleware({ dependencies });

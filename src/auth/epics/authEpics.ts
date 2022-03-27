@@ -10,12 +10,12 @@ import {
 } from 'rxjs';
 import { map, switchMap, catchError } from 'rxjs/operators';
 
-const signUpEpic = (action$: Observable<any>, _state$: any, { networkService }: EpicDependencies) => action$.pipe(
+const signUpEpic = (action$: Observable<any>, _state$: any, { authenticateService }: EpicDependencies) => action$.pipe(
     ofType(AuthActionsTypes.AUTHENTICATE_REQUEST),
     map((action: BaseRequestAction<IAuthRequestAction>) => action.payload),
-    switchMap((payload) => from(networkService.signIn(payload.firstName, payload.lastName))
+    switchMap(({ firstName, lastName }) => from(authenticateService.signUp({ firstName, lastName }))
         .pipe(
-            map((response: any) => {
+            map((response) => {
                 return (actionLoadingHide());
             }),
             catchError((error) => {
