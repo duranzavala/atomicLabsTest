@@ -3,7 +3,7 @@
   "compilerOptions": {
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "./",
+    "baseUrl": "./src",
     "esModuleInterop": true,
     "isolatedModules": true,
     "jsx": "react-native",
@@ -18,6 +18,12 @@
     "typeRoots": ["./src/types", "./node_modules/@types"],
     "paths": {
       "*": ["types/*"],
+      "@Auth/*": ["auth/*"],
+      "@Utils/*": ["utilities/*"],
+      "@Navigation/*": ["navigation/*"],
+      "@Interfaces/*": ["interfaces/*"],
+      "@Store/*": ["store/*"],
+      "@Loading/*": ["loading/*"],
     },
   },
   "exclude": [

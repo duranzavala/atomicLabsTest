@@ -1,14 +1,25 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet } from 'react-native';
+import { Provider } from 'react-redux';
+import { store } from '@Store/index';
+import LoadingComponent from '@Loading/screens/loadingComponent';
+import SignUpComponent from '@Auth/screens/signUpComponent';
 
-class App extends React.Component {
-    render() {
-        return (
-            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                <Text style={{ color: 'white' }}>Helow World</Text>
-            </View>
-        );
-    }
+const App: React.FC = () => {
+    return (
+        <Provider store={store}>
+            <SafeAreaView style={Styles.safeAreaViewContainer}>
+                <SignUpComponent />
+            </SafeAreaView>
+            <LoadingComponent />
+        </Provider>
+    );
 }
+
+const Styles = StyleSheet.create({
+    safeAreaViewContainer: {
+        flex: 1,
+    },
+});
 
 export default App;
