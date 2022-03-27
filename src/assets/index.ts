@@ -10,6 +10,12 @@ const secondTeamMember = require('@Assets/images/Group4040.png');
 const thirdTeamMember = require('@Assets/images/Group4040.png');
 const linkedIn = require('@Assets/images/linkedin.png');
 const twitter = require('@Assets/images/twitter.png');
+const spaceManEating = require('@Assets/images/Group4033.png');
+const stepOneBold = require('@Assets/images/Group4014.png');
+const stepTwo = require('@Assets/images/Group4019.png');
+const stepTwoBorder = require('@Assets/images/Group4020.png');
+const stepTwoBold = require('@Assets/images/Group4023.png');
+const stepCompleted = require('@Assets/images/Group4016.png');
 const atomicLogo: string = 'https://static.wixstatic.com/media/8143b9_987ce3ac07ac4f53aa64484350b47866~mv2.png/v1/fill/w_280,h_140,al_c,lg_1,enc_auto/20190404_atomiclabs_mx_blango.png';
 
 const Images = {
@@ -24,6 +30,12 @@ const Images = {
     linkedIn,
     secondTeamMember,
     spaceMan,
+    spaceManEating,
+    stepCompleted,
+    stepOneBold,
+    stepTwo,
+    stepTwoBold,
+    stepTwoBorder,
     thirdTeamMember,
     twitter,
 };

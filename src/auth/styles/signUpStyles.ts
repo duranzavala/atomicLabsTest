@@ -1,26 +1,40 @@
 import Colors from '@Utils/colors';
+import { hp, wp } from '@Utils/screenPixels';
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
+    backgroundImage: {
+        flex: 1,
+        width: wp('100%'),
+    },
     button: {
-        alignItems: 'center',
-        backgroundColor: Colors.PrimaryColor,
-        height: '5%',
-        justifyContent: 'center',
+        alignSelf: 'center',
+        marginTop: hp('5%'),
+    },
+    input: {
         marginTop: '5%',
-        width: '40%',
+    },
+    keyboardContainer: {
+        flex: 1,
+    },
+    logo: {
+        height: wp('15%'),
+        marginTop: hp('1%'),
+        width: wp('100%'),
     },
     mainContainer: {
-        alignItems: 'center',
-        flex: 1,
-        justifyContent: 'center',
+        paddingHorizontal: wp('2%'),
     },
-    textInput: {
-        backgroundColor: Colors.White,
-        color: Colors.PrimaryColor,
-        height: '5%',
-        marginTop: '5%',
-        paddingStart: '2%',
-        width: '60%',
+    spaceManEating: {
+        height: hp('50%'),
+        marginBottom: hp('1%'),
+        marginTop: hp('1%'),
+        width: wp('100%'),
+    },
+    title: {
+        color: Colors.White,
+        fontSize: wp('5%'),
+        marginTop: hp('5%'),
+        textAlign: 'left',
     },
 })

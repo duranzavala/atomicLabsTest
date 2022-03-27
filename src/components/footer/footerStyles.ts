@@ -21,7 +21,6 @@ export default StyleSheet.create({
     },
     mainContainer: {
         backgroundColor: Colors.Black,
-        marginTop: hp('8%'),
     },
     socialMediaContainer: {
         alignItems: 'center',

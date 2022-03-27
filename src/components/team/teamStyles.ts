@@ -13,6 +13,7 @@ export default StyleSheet.create({
     },
     mainContainer: {
         alignItems: 'center',
+        marginBottom: hp('8%'),
         width: wp('100%'),
     },
     memberCardContainer: {

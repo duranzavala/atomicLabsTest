@@ -10,7 +10,7 @@ const App: React.FC = () => {
     return (
         <Provider store={store}>
             <SafeAreaView style={Styles.safeAreaViewContainer}>
-                <HomeComponent />
+                <SignUpComponent />
             </SafeAreaView>
             <LoadingComponent />
         </Provider>
