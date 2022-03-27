@@ -3,9 +3,7 @@
 ## Installation
 
 **Follow the next steps to run the application:**
-* First you need to create an `.env` file into **envs folder** which should contains the following variables:
-  * `API_URL=https://morning-hamlet-18619.herokuapp.com`
-* Then you need to run the following command in your terminal to install all the packages
+* You need to run the following command in your terminal to install all the packages
   * `npm install`
 
 **Running the application**
