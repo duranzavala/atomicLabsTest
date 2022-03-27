@@ -4,12 +4,13 @@ import { Provider } from 'react-redux';
 import { store } from '@Store/index';
 import LoadingComponent from '@Loading/screens/loadingComponent';
 import SignUpComponent from '@Auth/screens/signUpComponent';
+import HomeComponent from '@Home/screens/homeComponent';
 
 const App: React.FC = () => {
     return (
         <Provider store={store}>
             <SafeAreaView style={Styles.safeAreaViewContainer}>
-                <SignUpComponent />
+                <HomeComponent />
             </SafeAreaView>
             <LoadingComponent />
         </Provider>

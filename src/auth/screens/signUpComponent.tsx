@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Text, TextInput, TouchableOpacity, View } from 'react-native';
 import Styles from '@Auth/styles/signUpStyles';
 import { useDispatch } from 'react-redux';
 import { actionAuthenticate } from '@Auth/state/authActions';
@@ -8,8 +8,8 @@ import Strings from '@Utils/strings';
 const SignUpComponent: React.FC = () => {
     const dispatch = useDispatch();
 
-    const [firstName, setFirstName] = useState('Arnulfo');
-    const [lastName, setLastName] = useState('Duran');
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
 
     const handleOnSignUp = () => dispatch(actionAuthenticate({ firstName, lastName }));
 
