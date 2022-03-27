@@ -5,7 +5,6 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
     backgroundImage: {
         flex: 1,
-        width: wp('100%'),
     },
     bodyMessage: {
         marginTop: hp('3.5%'),

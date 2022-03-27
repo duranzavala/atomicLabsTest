@@ -10,6 +10,7 @@ interface Props {
     inputStyle?: ViewStyle;
     placeHolder: string;
     keyboardType?: KeyboardTypeOptions;
+    limit?: number;
 }
 
 const InputComponent: React.FC<Props> = ({
@@ -19,7 +20,8 @@ const InputComponent: React.FC<Props> = ({
     placeHolder,
     showError,
     value,
-    keyboardType
+    keyboardType,
+    limit,
 }) => {
     return (
         <View style={inputStyle && inputStyle}>
@@ -29,6 +31,7 @@ const InputComponent: React.FC<Props> = ({
                 value={value}
                 onChangeText={onChangeText}
                 keyboardType={keyboardType}
+                maxLength={limit}
             />
             {(showError && errorMessage) && (
                 <Text style={Styles.errorMessage}>{errorMessage}</Text>

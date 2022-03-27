@@ -1,19 +1,20 @@
+import { hp, wp } from '@Utils/screenPixels';
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
     activityIndicator: {
-        bottom: 0,
-        left: 0,
-        opacity: 0.6,
+        backgroundColor: 'rgba(0,0,0,0)',
+        height: hp('100%'),
         position: 'absolute',
-        right: 0,
-        top: 0,
+        width: wp('100%'),
+        zIndex: 1,
     },
     mainContainer: {
-        backgroundColor: 'rgba(0,0,0,0)',
-        height: '100%',
+        alignSelf: 'center',
+        backgroundColor: 'rgba(0,0,0,0.6)',
+        height: hp('100%'),
         position: 'absolute',
-        width: '100%',
+        width: wp('100%'),
         zIndex: 1,
     },
 });

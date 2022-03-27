@@ -1,11 +1,13 @@
 import AuthenticateService from '@Network/interfaces/authService';
+import HomeService from '@Network/interfaces/homeService';
 interface EpicDependencies {
-    authenticateService: AuthenticateService,
+    authenticateService: AuthenticateService;
+    homeService: HomeService;
 };
 
 interface BaseRequestAction<T> {
-    type: string,
-    payload: T,
+    type: string;
+    payload: T;
 };
 
 type PromiseResolve<T> = ((result: T) => void);

@@ -50,7 +50,7 @@ export default StyleSheet.create({
         width: wp('100%'),
     },
     logo: {
-        height: wp('15%'),
+        height: hp('7%'),
         marginTop: hp('1%'),
         width: wp('100%'),
     },

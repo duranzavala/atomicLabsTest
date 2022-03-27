@@ -1,7 +1,7 @@
 import { Images } from '@Assets/index'
 import StepperComponent, { Steps } from '@Components/stepper/stepperComponent';
 import Strings from '@Utils/strings';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Image, ImageBackground, KeyboardAvoidingView, ScrollView, Text, View } from 'react-native';
 import Styles from '@Auth/styles/phoneVerificationStyles';
 import InputComponent from '@Components/input/inputComponent';
@@ -9,13 +9,31 @@ import ButtonComponent from '@Components/button/buttonComponent';
 import { useDispatch } from 'react-redux';
 import FooterComponent from '@Components/footer/footerComponent';
 import { actionVerifyPhoneNumber } from '@Auth/state/authActions';
+import PhoneVerificationObservable from '@Auth/observables/phoneVerificationObservable';
+import { NavigationParams, Screens } from '@Navigation/root';
+import { StackScreenProps } from '@react-navigation/stack';
 
-const PhoneVerificationComponent: React.FC = () => {
+interface Props extends StackScreenProps<NavigationParams, Screens.PhoneVerification> { };
+
+const LimitPhoneNumbers = 10;
+
+const PhoneVerificationComponent: React.FC<Props> = ({ navigation }) => {
     const dispatch = useDispatch();
 
     const [phoneNumber, setPhoneNumber] = useState('');
 
-    const isValidPhoneNumber = () => phoneNumber.length === 10;
+    useEffect(() => {
+        const phoneVerificationObservable = PhoneVerificationObservable.subscribe((response: boolean) => {
+            if (response) {
+                navigation.navigate(Screens.SignUpSuccess);
+            }
+        });
+        return () => {
+            phoneVerificationObservable.unsubscribe();
+        }
+    }, []);
+
+    const isValidPhoneNumber = () => phoneNumber.length === LimitPhoneNumbers;
 
     const isValidForm = () => isValidPhoneNumber();
 
@@ -56,6 +74,7 @@ const PhoneVerificationComponent: React.FC = () => {
                             errorMessage={Strings.phoneNumberError}
                             placeHolder={Strings.placeHolderPhoneNumber}
                             keyboardType='number-pad'
+                            limit={LimitPhoneNumbers}
                         />
                         <ButtonComponent
                             buttonStyle={Styles.button}

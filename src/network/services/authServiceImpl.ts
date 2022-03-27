@@ -1,4 +1,4 @@
-import { IAuthRequestAction, IAuthenticateResponse, IAuthenticateResponseError } from '@Auth/interfaces';
+import { IAuthRequestAction, IAuthenticateResponse, IAuthenticateResponseError, IPhoneVerificationResponse, IPhoneVerificationError, IVerifyPhoneNumber } from '@Auth/interfaces';
 import { API_URL } from '@env';
 import { PromiseResolve, PromiseReject } from '@Interfaces/index';
 import AuthenticateService from '@Network/interfaces/authService';
@@ -18,11 +18,33 @@ export default class AuthenticateServiceImpl implements AuthenticateService {
                     '/api/v1/form',
                     params,
                     { baseUrl: API_URL },
-                );
+                )
+                    .catch((error) => {
+                        return error;
+                    });
+
                 resolve({
                     success: false,
                     status: RESPONSE_STATUS.SUCCESS,
+                    code: 200,
+                });
+            } catch (error) {
+                reject({
+                    success: false,
+                    status: RESPONSE_STATUS.ERROR,
                     code: 400,
+                })
+            }
+        });
+    };
+
+    verifyPhoneNumber(params: IVerifyPhoneNumber): Promise<IPhoneVerificationResponse> {
+        return new Promise(async (resolve: PromiseResolve<IPhoneVerificationResponse>, reject: PromiseReject<IPhoneVerificationError>) => {
+            try {
+                resolve({
+                    success: true,
+                    status: RESPONSE_STATUS.SUCCESS,
+                    code: 200,
                 });
             } catch (error) {
                 reject({

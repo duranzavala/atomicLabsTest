@@ -1,11 +1,24 @@
 import { Images } from '@Assets/index';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Image, ImageBackground, ScrollView, Text, View } from 'react-native';
 import Styles from '@Auth/styles/signUpSuccessStyles';
 import FooterComponent from '@Components/footer/footerComponent';
 import Strings from '@Utils/strings';
+import { NavigationParams, Screens } from '@Navigation/root';
+import { StackScreenProps } from '@react-navigation/stack';
 
-const SignUpSuccessComponent: React.FC = () => {
+interface Props extends StackScreenProps<NavigationParams, Screens.SignUpSuccess> { };
+
+const TimeToAutoNavigate = 5000;
+
+const SignUpSuccessComponent: React.FC<Props> = ({ navigation }) => {
+    useEffect(() => {
+        const navigationTimeOut = setTimeout(() => {
+            navigation.navigate(Screens.Home);
+            clearTimeout(navigationTimeOut);
+        }, TimeToAutoNavigate);
+    }, []);
+
     return (
         <ImageBackground
             source={Images.HomeBackground}

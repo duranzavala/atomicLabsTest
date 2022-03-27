@@ -5,6 +5,7 @@ import { rootEpic, rootReducer } from "@Store/modules/root";
 import { EpicDependencies } from '@Interfaces/index';
 import NetworkAxiosService from '@Network/services/networkService';
 import AuthenticateServiceImpl from '@Network/services/authServiceImpl';
+import HomeServiceImplementation from '@Network/services/homeServiceImpl';
 
 declare global {
   interface Window {
@@ -14,9 +15,11 @@ declare global {
 
 const networkAxiosService: NetworkAxiosService = NetworkAxiosService.getInstance();
 const authenticateServiceImpl = new AuthenticateServiceImpl(networkAxiosService);
+const homeServiceImpl = new HomeServiceImplementation(networkAxiosService);
 
 const dependencies: EpicDependencies = {
   authenticateService: authenticateServiceImpl,
+  homeService: homeServiceImpl,
 };
 
 const epicMiddleware = createEpicMiddleware({ dependencies });

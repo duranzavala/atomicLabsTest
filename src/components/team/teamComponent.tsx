@@ -1,16 +1,19 @@
-import Constants from '@Utils/constants';
 import React from 'react';
 import { Image, Text, View } from 'react-native';
 import Styles from '@Components/team/teamStyles';
 
-export interface TeamMember {
+export interface ITeamMember {
     uri: any;
     name: string;
     role: string;
 }
 
-const TeamComponent: React.FC = () => {
-    const renderTeamCardMember = (teamMeber: TeamMember, index: number) => (
+interface Props {
+    team: ITeamMember[];
+}
+
+const TeamComponent: React.FC<Props> = ({ team }) => {
+    const renderTeamCardMember = (teamMeber: ITeamMember, index: number) => (
         <View key={`${index}-${teamMeber.name}`} style={Styles.memberCardContainer}>
             <Image
                 resizeMode='contain'
@@ -28,7 +31,7 @@ const TeamComponent: React.FC = () => {
                 NUESTRO
                 <Text style={Styles.ourTeamTextBold}> EQUIPO</Text>
             </Text>
-            {Constants.TeamMembers.map(renderTeamCardMember)}
+            {team.map(renderTeamCardMember)}
         </View>
     );
 };

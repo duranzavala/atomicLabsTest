@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Image, ImageBackground, KeyboardAvoidingView, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { Image, ImageBackground, KeyboardAvoidingView, ScrollView, Text, View } from 'react-native';
 import Styles from '@Auth/styles/signUpStyles';
 import { useDispatch } from 'react-redux';
 import { actionAuthenticate } from '@Auth/state/authActions';
@@ -9,20 +9,36 @@ import FooterComponent from '@Components/footer/footerComponent';
 import StepperComponent, { Steps } from '@Components/stepper/stepperComponent';
 import ButtonComponent from '@Components/button/buttonComponent';
 import InputComponent from '@Components/input/inputComponent';
+import { StackScreenProps } from '@react-navigation/stack';
+import { NavigationParams, Screens } from '@Navigation/root';
+import SignUpObservable from '@Auth/observables/signUpObservable';
 
-const SignUpComponent: React.FC = () => {
+interface Props extends StackScreenProps<NavigationParams, Screens.SignUp> { };
+
+const SignUpComponent: React.FC<Props> = ({ navigation }) => {
     const dispatch = useDispatch();
 
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
 
-    const handleOnSignUp = () => dispatch(actionAuthenticate({ firstName, lastName }));
+    useEffect(() => {
+        const signUpSuccessObservable = SignUpObservable.subscribe((response: boolean) => {
+            if (response) {
+                navigation.navigate(Screens.PhoneVerification);
+            }
+        });
+        return () => {
+            signUpSuccessObservable.unsubscribe();
+        }
+    }, []);
 
     const isValidFirstName = () => firstName.length >= 5;
 
     const isValidLastName = () => lastName.length >= 5;
 
     const isValidForm = () => isValidFirstName() && isValidLastName();
+
+    const handleOnSignUp = () => dispatch(actionAuthenticate({ firstName, lastName }));
 
     return (
         <KeyboardAvoidingView

@@ -9,17 +9,19 @@ interface IVerifyPhoneNumber {
     phoneNumber: string;
 }
 
-interface IAuthenticateResponse extends IBaseServerResponse {
+interface IAuthenticateResponse extends IBaseServerResponse { }
 
-}
+interface IAuthenticateResponseError extends IBaseServerResponse { }
 
-interface IAuthenticateResponseError extends IBaseServerResponse {
+interface IPhoneVerificationResponse extends IBaseServerResponse { }
 
-}
+interface IPhoneVerificationError extends IBaseServerResponse { }
 
 export type {
     IAuthRequestAction,
     IAuthenticateResponse,
     IAuthenticateResponseError,
     IVerifyPhoneNumber,
+    IPhoneVerificationResponse,
+    IPhoneVerificationError,
 };

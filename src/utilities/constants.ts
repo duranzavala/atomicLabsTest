@@ -1,9 +1,9 @@
 import { Images } from '@Assets/index';
-import { CarouselItem } from '@Components/carousel/carouselComponent';
-import { TeamMember } from '@Components/team/teamComponent';
+import { ICarouselItem } from '@Components/carousel/carouselComponent';
+import { ITeamMember } from '@Components/team/teamComponent';
 import Strings from '@Utils/strings';
 
-const CarouselItems: CarouselItem[] = [
+const CarouselItems: ICarouselItem[] = [
     {
         uri: Images.carouselFirstImage,
         title: Strings.imagine,
@@ -37,7 +37,7 @@ const CarouselItems: CarouselItem[] = [
     },
 ];
 
-const TeamMembers: TeamMember[] = [
+const TeamMembers: ITeamMember[] = [
     {
         uri: Images.firstTeamMember,
         name: 'Ramón Gómez',
