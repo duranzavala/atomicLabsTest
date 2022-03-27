@@ -5,6 +5,10 @@ interface IAuthRequestAction {
     lastName: string;
 }
 
+interface IVerifyPhoneNumber {
+    phoneNumber: string;
+}
+
 interface IAuthenticateResponse extends IBaseServerResponse {
 
 }
@@ -13,4 +17,9 @@ interface IAuthenticateResponseError extends IBaseServerResponse {
 
 }
 
-export type { IAuthRequestAction, IAuthenticateResponse, IAuthenticateResponseError };
+export type {
+    IAuthRequestAction,
+    IAuthenticateResponse,
+    IAuthenticateResponseError,
+    IVerifyPhoneNumber,
+};

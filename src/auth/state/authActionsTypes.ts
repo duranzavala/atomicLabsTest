@@ -1,5 +1,6 @@
 enum AuthActionsTypes {
     AUTHENTICATE_REQUEST = 'AUTH/AUTHENTICATE_REQUEST',
+    VERIFY_PHONE_NUMBER = 'AUTH/VERIFY_PHONE_NUMBER',
 };
 
 export default AuthActionsTypes;

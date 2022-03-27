@@ -25,16 +25,22 @@ export default StyleSheet.create({
     mainContainer: {
         paddingHorizontal: wp('2%'),
     },
-    spaceManEating: {
-        height: hp('50%'),
+    spaceManMoon: {
+        height: hp('55%'),
         marginBottom: hp('1%'),
         marginTop: hp('1%'),
         width: wp('100%'),
     },
-    title: {
+    phraseOne: {
         color: Colors.White,
         fontSize: wp('4%'),
         marginTop: hp('5%'),
-        textAlign: 'left',
+        textAlign: 'justify',
     },
-})
+    phraseTwo: {
+        color: Colors.White,
+        fontSize: wp('4%'),
+        marginTop: hp('2%'),
+        textAlign: 'justify',
+    },
+});

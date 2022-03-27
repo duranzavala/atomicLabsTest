@@ -32,13 +32,13 @@ export default StyleSheet.create({
     },
     stepOne: {
         marginTop: hp('1%'),
-        width: wp('10%'),
-        height: wp('10%'),
+        width: wp('8%'),
+        height: wp('8%'),
     },
     stepTwo: {
-        height: wp('10%'),
+        height: wp('8%'),
         marginTop: hp('1%'),
-        width: wp('10%'),
+        width: wp('8%'),
     },
     stepsContainer: {
         alignItems: 'center',
@@ -57,6 +57,11 @@ export default StyleSheet.create({
         fontSize: wp('8%'),
         fontWeight: 'bold',
         textAlign: 'left',
+    },
+    titleStepNumber: {
+        height: wp('10%'),
+        marginTop: hp('1%'),
+        width: wp('10%'),
     },
     titleTextContainer: {
         marginLeft: wp('10%'),

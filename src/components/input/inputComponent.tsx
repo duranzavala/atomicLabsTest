@@ -1,7 +1,6 @@
 import React from 'react';
-import { Text, TextInput, View, ViewStyle } from 'react-native';
+import { KeyboardTypeOptions, Text, TextInput, View, ViewStyle } from 'react-native';
 import Styles from '@Components/input/inputStyles';
-import Strings from '@Utils/strings';
 
 interface Props {
     value: string;
@@ -10,6 +9,7 @@ interface Props {
     errorMessage?: string;
     inputStyle?: ViewStyle;
     placeHolder: string;
+    keyboardType?: KeyboardTypeOptions;
 }
 
 const InputComponent: React.FC<Props> = ({
@@ -19,6 +19,7 @@ const InputComponent: React.FC<Props> = ({
     placeHolder,
     showError,
     value,
+    keyboardType
 }) => {
     return (
         <View style={inputStyle && inputStyle}>
@@ -27,6 +28,7 @@ const InputComponent: React.FC<Props> = ({
                 style={[Styles.mainContainer, showError && Styles.mainContainerError ]}
                 value={value}
                 onChangeText={onChangeText}
+                keyboardType={keyboardType}
             />
             {(showError && errorMessage) && (
                 <Text style={Styles.errorMessage}>{errorMessage}</Text>

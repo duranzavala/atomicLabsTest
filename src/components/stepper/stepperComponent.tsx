@@ -34,7 +34,7 @@ const StepperComponent: React.FC<Props> = ({ currentStep, title }) => {
             <View style={Styles.mainTitleContainer}>
                 <Image
                     resizeMode='contain'
-                    style={Styles.stepTwo}
+                    style={Styles.titleStepNumber}
                     source={currentStep === Steps.One ? Images.stepOneBold : Images.stepTwoBold}
                 />
                 <View style={Styles.titleTextContainer}>

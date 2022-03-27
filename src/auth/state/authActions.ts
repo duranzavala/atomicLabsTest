@@ -1,6 +1,6 @@
 import { createAction } from 'typesafe-actions';
 
-import { IAuthRequestAction } from '@Auth/interfaces/index';
+import { IAuthRequestAction, IVerifyPhoneNumber } from '@Auth/interfaces/index';
 import AuthActionsTypes from '@Auth/state/authActionsTypes';
 
 const actionAuthenticate = createAction(
@@ -8,4 +8,9 @@ const actionAuthenticate = createAction(
     (request: IAuthRequestAction) => (request)
 )();
 
-export { actionAuthenticate };
+const actionVerifyPhoneNumber = createAction(
+    AuthActionsTypes.VERIFY_PHONE_NUMBER,
+    (request: IVerifyPhoneNumber) => (request)
+)();
+
+export { actionAuthenticate, actionVerifyPhoneNumber };
